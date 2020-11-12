@@ -1,0 +1,8 @@
+#if !defined(PROJECT_INCLUDE_TCPCLIENT_H)
+#define PROJECT_INCLUDE_TCPCLIENT_H
+
+class TcpClient {
+    ;
+};
+
+#endif // PROJECT_INCLUDE_TCPCLIENT_H

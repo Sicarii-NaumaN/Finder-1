@@ -1,0 +1,8 @@
+#if !defined(PROJECT_INCLUDE_REQUESTPARSER_H)
+#define PROJECT_INCLUDE_REQUESTPARSER_H
+
+class RequestParser {
+    ;
+};
+
+#endif // PROJECT_INCLUDE_REQUESTPARSER_H
