@@ -1,0 +1,8 @@
+#if !defined(PROJECT_INCLUDE_FILESERVER_H)
+#define PROJECT_INCLUDE_FILESERVER_H
+
+class FileServer {
+    ;
+};
+
+#endif // PROJECT_INCLUDE_FILESERVER_H
