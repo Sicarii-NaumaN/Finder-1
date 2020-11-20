@@ -29,7 +29,7 @@ public:
     void extension_parse(struct  request_HTTP_data* req_data);
     void parse_http_full(char* request, struct  request_HTTP_data* req_data); // concat 3 previous
 private:
-    std::string request;
+    std::string http_request;
 };
 
 

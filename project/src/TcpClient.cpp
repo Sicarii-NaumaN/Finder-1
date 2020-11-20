@@ -24,6 +24,10 @@ User::User(const std::string_view name, const std::vector<std::string> &tag) {
 
 }
 
+bool User::is_connected() {
+    return false;
+}
+
 void UserAuthorization::getUserData(std::string request) {
 
 }

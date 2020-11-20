@@ -4,6 +4,9 @@
 #include <memory>
 #include <string_view>
 #include <vector>
+#include <boost/asio.hpp>
+#include <utility>
+
 
 struct sign_data{
     std::string login;
@@ -17,15 +20,20 @@ enum actions {
     PLAY
 };
 
-
 class User {
 private:
     int id;
     const char* nickname = "guest";
+    std::vector<std::string> personal_tags;
 public:
-    std::vector<std::string> personal_tags{};
-    User(const std::string_view name = "guest", const std::vector<std::string> &tag = std::vector<std::string>());
+    boost::shared_ptr<boost::asio::ip::tcp::socket> sock;
+    bool is_connected();
+    explicit User(std::string_view name = "guest", const std::vector<std::string> &tag = std::vector<std::string>());
+    User(int ID, boost::shared_ptr<boost::asio::ip::tcp::socket> socket) {
+        id = ID;
+        sock = std::move(socket);
 
+    }
     virtual ~User() = default;
 
 protected:
@@ -80,5 +88,4 @@ public:
     int response(std::string request);
     void connectClient();
     void closeConnectClient();
-
 };
